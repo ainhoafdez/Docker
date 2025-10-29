@@ -36,3 +36,9 @@ sudo apt-get update
 - `docker rm $` -> borra todos los contenedores
 - `docker run -d nginx` -> inicia un servidor web (nginx) en segundo plano (-d)
 - `docker run -d -p puertoHost:puertoContenedor` -> inicia "" abriendo el puerto host al puerto del contenedor
+- `docker run -d -p 80:8080 tsongpon/pon` -> inicia tsongpon/pingpong en el puerto 80:8080 en segundo plano
+- `docker run -d -p 443:8080 tsongpon/pon` -> inicia tsongpon/pingpong en el puerto 443:8080 en segundo plano para tener los 2 a la vez
+- `sudo curl localhost/ping` -> devuelve "pong" con tsongpon/pon
+- `docker exec -it (id) bin/bash` -> entrar al contenedor para editar la página web de manera iterativa
+- Ruta de página web de nginx: /usr/share/nginx/html
+- `docker inspect (id) -f"{{NetworkSettings.IPAdress}}"`
